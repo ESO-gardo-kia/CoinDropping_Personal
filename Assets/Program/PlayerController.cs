@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     private GameObject throwCoin;
     public float movementSpeed;
     public Vector3 throwPower;
+    public float throwRate;
+    private float numRate;
     public int residualCoin;
     public Text residualCoinText;
     void Start()
@@ -18,8 +20,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         residualCoinText.text = "ResidualCoin:" + residualCoin.ToString();
-        if (Input.GetKeyDown(KeyCode.Space) && residualCoin > 0)
+        if (Input.GetKey(KeyCode.Space) && residualCoin > 0 && throwRate < numRate)
         {
+            numRate = 0;
             residualCoin--;
             GameObject throwcoin = Instantiate(throwCoin,this.transform);
             throwcoin.GetComponent<Rigidbody>().AddForce(throwPower + Vector3.right * Random.Range(-4,4),ForceMode.Impulse);
@@ -28,7 +31,8 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if(Input.GetKey(KeyCode.A))
+        numRate += 0.02f;
+        if (Input.GetKey(KeyCode.A))
         {
             transform.position += Vector3.left * movementSpeed;
         }

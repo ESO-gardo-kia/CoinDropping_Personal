@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5726656383005129850}
   - component: {fileID: 209787596002303708}
   - component: {fileID: 297810473916561502}
-  - component: {fileID: 2020821652756983093}
   - component: {fileID: -5974518175249997731}
   m_Layer: 0
   m_Name: Coin
@@ -113,31 +112,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_Constraints: 0
   m_CollisionDetection: 3
---- !u!64 &2020821652756983093
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8075731595166055891}
-  m_Material: {fileID: 13400000, guid: 157c82a1079ac9d4b8aecb2084de275c, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4632596647708219413, guid: 90a00f43a0534a642920b1b56951d0c6, type: 3}
 --- !u!65 &-5974518175249997731
 BoxCollider:
   m_ObjectHideFlags: 0

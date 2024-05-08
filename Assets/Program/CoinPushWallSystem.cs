@@ -23,7 +23,7 @@ public class CoinPushWallSystem : MonoBehaviour
     {
         if (collision.transform.CompareTag("Coin"))
         {
-            collision.transform.position += Vector3.forward * moved_distance * 1.5f;
+            collision.transform.position += Vector3.forward * moved_distance;
         }
     }
 }
