@@ -7,10 +7,13 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private GameObject throwCoin;
+
     public float movementSpeed;
     public Vector3 throwPower;
+
     public float throwRate;
     private float numRate;
+
     public int residualCoin;
     public Text residualCoinText;
     void Start()

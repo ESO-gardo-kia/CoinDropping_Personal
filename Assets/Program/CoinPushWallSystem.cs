@@ -6,7 +6,6 @@ public class CoinPushWallSystem : MonoBehaviour
 {
     private float initialPoint;
     public  float movementRange;
-
     private float moved_distance;
     void Start()
     {
