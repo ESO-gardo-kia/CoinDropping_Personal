@@ -1,2 +1,3 @@
 # CoinDropping_Personal
-test
+コイン落としのゲームです
+3DModel及びTextrueは自分で制作した物です
