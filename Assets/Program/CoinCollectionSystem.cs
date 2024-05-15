@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinCollection_System : MonoBehaviour
+public class CoinCollectionSystem : MonoBehaviour
 {
-    public PlayerController Player;
-    void Start()
-    {
-        
-    }
-    void Update()
-    {
-        
-    }
+    [SerializeField]
+    private PlayerController Player;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.CompareTag("Coin"))

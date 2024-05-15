@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour
     public Vector3 throwPower;
 
     public float throwRate;
-    private float numRate;
+    public float throwDirection;
+    public Vector2 throwDiffusionRange;
 
     public int residualCoin;
     public Text residualCoinText;
@@ -22,26 +23,24 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+        if(throwDirection < throwRate) throwDirection += Time.deltaTime;
         residualCoinText.text = "ResidualCoin:" + residualCoin.ToString();
-        if (Input.GetKey(KeyCode.Space) && residualCoin > 0 && throwRate < numRate)
+        if (Input.GetKey(KeyCode.Space) && residualCoin > 0 && throwRate < throwDirection)
         {
-            numRate = 0;
+            Debug.Log("ƒRƒCƒ“”­ŽË");
+            throwDirection = 0;
             residualCoin--;
             GameObject throwcoin = Instantiate(throwCoin,this.transform);
-            throwcoin.GetComponent<Rigidbody>().AddForce(throwPower + Vector3.right * Random.Range(-4,4),ForceMode.Impulse);
+            throwcoin.GetComponent<Rigidbody>().AddForce(throwPower + Vector3.right * Random.Range(throwDiffusionRange.x, throwDiffusionRange.y),ForceMode.Impulse);
             throwcoin.transform.parent = null;
         }
-    }
-    private void FixedUpdate()
-    {
-        numRate += 0.02f;
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position += Vector3.left * movementSpeed;
+            transform.position += Vector3.left * movementSpeed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += Vector3.right * movementSpeed;
+            transform.position += Vector3.right * movementSpeed * Time.deltaTime;
         }
     }
 }
